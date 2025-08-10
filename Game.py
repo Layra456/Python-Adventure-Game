@@ -36,7 +36,7 @@ class Enemy(Character):
 
     def attack(self):
         # Enemy attack damage is between 5 and 10
-        return random.randint(5, 10)
+        return random.randint(5, 15)
 
 
 # Save game state to a file
@@ -63,7 +63,7 @@ def main():
     # Load existing game or start new
     if choice.lower() == "y":
         player = load_game()
-        print(f"Welcome, Back {player.name}")
+        print(f"Welcome Back, {player.name}")
     else:
         player = Player(input("Enter your Name : "))
 
@@ -80,7 +80,7 @@ def main():
         # Moving and possibly encountering enemies
         elif action.lower() == "m":
             if random.choice([True, False]):  # 50% chance of enemy
-                enemy = Enemy("Goblin", 30)
+                enemy = Enemy("Goblin", 100)
                 print(f"A Wild Goblin Appears🧌")
 
                 # Fight until one is dead
